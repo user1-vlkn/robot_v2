@@ -1,10 +1,12 @@
 
-from Print import Print
+import sys
+sys.path.append('..')
+from default.Print import Print
 import nodriver as uc
 import time
 import sys
 
-from Sleep import Sleep
+from default.Sleep import Sleep
 
 
 class User:
@@ -30,7 +32,6 @@ class User:
         try:
             
             await self.walk()
-            
             
         except Exception as e:
             Print.error('[+] Error in user start')

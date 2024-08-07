@@ -1,8 +1,5 @@
 
 
-# import bcolors as bcs
-
-
 class Print:
     
     # class bcs:
@@ -29,8 +26,3 @@ class Print:
     @staticmethod
     def ok(txt): print(f'{Print.OKGREEN}{txt}{Print.ENDC}')
     
-    
-    # after delete
-    # ==============================================================
-    # @staticmethod
-    # def test(txt): print(f'{Print.OKGREEN}{txt}{Print.ENDC}')

@@ -3,7 +3,7 @@
 import time
 import random
 from Print import Print
-
+    
 
 class Sleep:
     
@@ -18,6 +18,7 @@ class Sleep:
                     z = ['z', 'Z'][random.randint(0, 1)]
                     zs += z
                     print(f'\r[+] Sleep {sl}s! {zs}', end='')
+                print('\n')
         
         except Exception as e:
             Print.error('[+] Error in method zZz')

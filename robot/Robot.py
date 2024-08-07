@@ -1,10 +1,11 @@
 
-
-from Print import Print
+import sys
+sys.path.append('..')
+from default.Print import Print
 from User import User
 import subprocess
 import time
-from Sleep import Sleep
+from default.Sleep import Sleep
 
 class Robot:
     
@@ -34,8 +35,6 @@ class Robot:
                 Sleep.zZz(2)
                 
                 
-                
-        
         except Exception as e:
             Print.error('[+] Error in method run')
             Print.error(e)
