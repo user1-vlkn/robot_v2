@@ -1,23 +1,51 @@
 
-
-
 from Print import Print
+import nodriver as uc
+import time
+import sys
+
+from Sleep import Sleep
+
 
 class User:
     
-    def __init__(self) -> None:
-        
-        # some args
-        pass
+    # async def __init__(self, data) -> None: self.data = data
     
-    def run(self):
+    async def walk(self):
         
         try:
+            browser = await uc.start()
+            page = await browser.get('https://www.nowsecure.nl')
+            await page.get_content()
+            await page.scroll_down(150)
             
-            Print.log|("[+] Start User")
-        
+            Sleep.zZz(2)
+            
+            await page.close()
+            
         except Exception as e:
-            Print.error('[+] Error in method User(run)')
+            Print.log(e)
+    
+    async def start(self,a):
+        try:
+            
+            await self.walk()
+            
+            
+        except Exception as e:
+            Print.error('[+] Error in user start')
             Print.error(e)
-            
-            
+    
+
+
+if __name__ == "__main__":
+    try:
+        
+        args = sys.argv if sys.argv != None else False
+        
+        if args: uc.loop().run_until_complete(User().start(args))
+        
+    
+    except Exception as e:
+        Print.error('[+] Error in user main')
+        Print.error(e)
